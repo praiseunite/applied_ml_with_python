@@ -1,0 +1,57 @@
+# Virtual Environment
+venv/
+env/
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Data files (large datasets should be downloaded, not committed)
+*.csv
+*.xlsx
+*.xls
+*.json
+!**/examples/*.json
+*.h5
+*.hdf5
+*.pkl
+*.joblib
+*.parquet
+
+# Model files
+*.pt
+*.pth
+*.onnx
+saved_models/
+
+# Logs
+*.log
+logs/
+mlruns/
+
+# Temporary
+tmp/
+temp/
+.tmp/
