@@ -1,4 +1,4 @@
-# Session 03: Markov Decision Process & Reinforcement Learning
+# Session 04: Markov Decision Process & Reinforcement Learning
 
 <p align="center">
   <img src="https://img.shields.io/badge/Duration-4%20Hours-blue?style=for-the-badge" />

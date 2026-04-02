@@ -1,4 +1,4 @@
-# Session 02: Unsupervised Advanced Clustering Algorithms
+# Session 03: Unsupervised Advanced Clustering Algorithms
 
 <p align="center">
   <img src="https://img.shields.io/badge/Duration-2%20Hours-blue?style=for-the-badge" />

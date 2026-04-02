@@ -1,4 +1,4 @@
-# Session 01: Introduction to Machine Learning
+# Session 01 & 02: Introduction to Machine Learning
 
 <p align="center">
   <img src="https://img.shields.io/badge/Duration-4%20Hours-blue?style=for-the-badge" />

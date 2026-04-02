@@ -1,4 +1,4 @@
-# Session 04: Policy Optimization and Actor-Critic Methods
+# Session 05: Policy Optimization and Actor-Critic Methods
 
 Welcome to **Part 4** of the Applied Machine Learning Using Python curriculum! 
 
@@ -125,4 +125,4 @@ source venv/bin/activate
 Ensure `tensorflow` and `gymnasium` are installed via your `requirements.txt`.
 
 ---
-*© 2024 Aptech Limited — For Educational Use*
+  *© 2024 Aptech Limited — For Educational Use*

@@ -1,0 +1,4 @@
+streamlit==1.32.2
+gymnasium[classic-control]==0.29.1
+stable-baselines3[extra]==2.2.1
+numpy<2.0.0
