@@ -45,6 +45,8 @@ desktop.ini
 *.pth
 *.onnx
 saved_models/
+.zip
+
 
 # Logs
 *.log

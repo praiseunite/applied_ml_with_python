@@ -17,15 +17,53 @@ By the end of this session, you will be able to:
 
 ---
 
+## 🛠️ Step 0: Environment Setup (Start Here!)
+
+Before doing anything, you need to set up and activate your Python environment. You must do this from the **Root Project Folder**, not from inside the Session 6 folder.
+
+1. Open your terminal (PowerShell, Command Prompt, or standard terminal on Mac/Linux).
+2. Navigate to the absolute root folder of the entire course:
+   ```bash
+   cd path/to/Applied_ML_with_python
+   ```
+3. **If you have never run the setup before**, build the environment by running the setup script:
+   ```powershell
+   # Windows
+   .\setup.bat
+
+   # macOS / Linux
+   ./setup.sh
+   ```
+4. **Activate the virtual environment**:
+   ```powershell
+   # Windows (PowerShell)
+   .\venv\Scripts\Activate.ps1
+
+   # Windows (Command Prompt / CMD)
+   venv\Scripts\activate
+
+   # macOS / Linux
+   source venv/bin/activate
+   ```
+   *(You will know this step worked if your terminal prompt now starts with a green `(venv)` tag!)*
+
+---
+
 ## 📖 Part 1: Train the AI Model (The Brain)
 
-Before deploying, our agent needs to learn how to play. We will teach an AI agent to perfectly balance a pole on a moving cart using **Reinforcement Learning**.
+Now that your environment is activated, our agent needs to learn how to play. We will teach an AI agent to perfectly balance a pole on a moving cart using **Reinforcement Learning**.
 
-1. Navigate to the `notebooks/` directory.
-2. Open the comprehensive Jupyter Notebook: `RL_Game_Agent_Lab.ipynb`.
-3. Follow the guided cells to initialize the `CartPole-v1` environment.
-4. Run the PPO algorithm for 25,000 timesteps.
-5. **Artifact Generation:** The notebook will export the trained model as `ppo_cartpole.zip` directly into the `app/` directory. This is our self-contained "AI Brain".
+1. In your same terminal, change your directory to the Session 06 folder:
+   ```bash
+   cd Session_06_Practice_01_RL_Game_Agent
+   ```
+2. Start Jupyter Lab:
+   ```bash
+   jupyter lab
+   ```
+3. In the Jupyter Lab browser that opens, navigate to the `notebooks/` directory and open `RL_Game_Agent_Lab.ipynb`.
+4. Read through the notebook and **run all the cells** from top to bottom. It will initialize the `CartPole-v1` environment and mathematically train the PPO algorithm.
+5. **Artifact Generation:** The final notebook cell will export the trained model as `ppo_cartpole.zip` directly into the `app/` directory. This is our self-contained "AI Brain".
 
 ---
 
@@ -33,16 +71,22 @@ Before deploying, our agent needs to learn how to play. We will teach an AI agen
 
 We must switch from "Data Scientist" mode to "Software Engineer" mode to give our Brain a frontend.
 
-1. Navigate to the `app/` directory.
-2. Review the `app.py` script. It uses **Streamlit** to create a web interface.
-3. Observe how the frontend code seamlessly loads the `ppo_cartpole.zip` file, connects to the game environment, and asks the AI for continuous predictions on what move to make next.
-4. **Run the Simulation Locally:**
+1. Close Jupyter Lab (by typing `Ctrl+C` in your terminal and typing `y`), or simply open a **new** terminal window and activate the virtual environment again (Step 0).
+2. Make sure you are inside the `app/` folder for Session 6:
    ```bash
    cd app
+   ```
+   *(If you opened a new terminal at the project root, type: `cd Session_06_Practice_01_RL_Game_Agent/app`)*
+3. Install the specific requirements for the web frontend:
+   ```bash
    pip install -r requirements.txt
+   ```
+4. Run the Streamlit web application:
+   ```bash
    streamlit run app.py
    ```
-   *Verify that the app launches in your browser and the AI successfully balances the pole in real-time!*
+5. **View the Simulation:** Streamlit will start a server and output a **Local URL** (usually `http://localhost:8501`). Open that URL in your web browser.
+   *Verify that the app successfully launches and observe the AI balancing the pole based on your newly trained model!*
 
 ---
 
@@ -52,7 +96,7 @@ Now that your web application works locally, it's time to share it globally!
 
 1. Go to [Hugging Face Spaces](https://huggingface.co/spaces) and log in to your account.
 2. Create a new Space and select **Streamlit** as your Space SDK.
-3. Upload the exact contents of your `app/` folder (including `app.py`, `requirements.txt`, and the `ppo_cartpole.zip` artifact model) directly into the Hugging Face repository.
+3. Upload the exact contents of your local `app/` folder (including `app.py`, `requirements.txt`, and the `ppo_cartpole.zip` artifact model) directly into the Hugging Face repository.
 4. Watch Hugging Face build the Docker container and deploy your app. 
 5. Congratulations, you just published an AI Agent portfolio project!
 
@@ -68,22 +112,6 @@ In this folder, you will find the complete workflow structure:
    The deployment script that wraps the trained model in a beautiful interactive UI.
 3. **`app/requirements.txt`**
    The exact package definitions required for the web server to run your code successfully.
-
----
-
-## 🛠️ Environment Prerequisites
-
-Ensure you have activated your virtual environment before starting:
-
-```bash
-# Windows
-venv\Scripts\activate
-
-# macOS / Linux
-source venv/bin/activate
-```
-
-The app execution requires `streamlit`, `stable-baselines3`, and `gymnasium`.
 
 ---
 *© 2024 Aptech Limited — For Educational Use*
