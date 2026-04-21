@@ -57,3 +57,6 @@ mlruns/
 tmp/
 temp/
 .tmp/
+
+# Final Exam files
+FINAL_EXAM_*.md
